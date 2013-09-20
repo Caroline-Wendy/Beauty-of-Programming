@@ -1,3 +1,5 @@
+/*From Beauty of Programming, By C.L.Wang*/
+
 #include <iostream>
 
 using namespace std;
