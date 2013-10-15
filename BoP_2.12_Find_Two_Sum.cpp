@@ -1,6 +1,7 @@
 /*From Beauty of Programming, By C.L.Wang*/
 /*编程之美2.12 快速寻找满足条件的两个数*/
 /*采用先排序, 然后收尾相加, 向内查找, 直到首次找到为止*/
+/*时间复杂度:O(N)*/
 
 #include "stdafx.h"
 
