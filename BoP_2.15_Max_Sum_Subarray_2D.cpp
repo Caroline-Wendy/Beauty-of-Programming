@@ -1,13 +1,13 @@
 /*From Beauty of Programming, By C.L.Wang*/
-/*题目参见 编程之美 P189*/
-/*编程之美2.15 子数组之和的最大值(二维)*/
-/*一维子数组之和的推广, 采用确定上下边界之后, 进行动态规划*/
-/*时间复杂度: O(N*M*min(M,N)=O(N^2*M)*/
+/*锟斤拷目锟轿硷拷 锟斤拷锟斤拷之锟斤拷 P189*/
+/*锟斤拷锟斤拷之锟斤拷2.15 锟斤拷锟斤拷锟斤拷之锟酵碉拷锟斤拷锟斤拷值(锟斤拷维)*/
+/*一维锟斤拷锟斤拷锟斤拷之锟酵碉拷锟狡癸拷, 锟斤拷锟斤拷确锟斤拷锟斤拷锟铰边斤拷之锟斤拷, 锟斤拷锟叫讹拷态锟芥划*/
+/*时锟戒复锟接讹拷: O(N*M*min(M,N)=O(N^2*M)*/
 
 #include "stdafx.h"
 
 #include <iostream>
-#include <climits> //包含最大最小值
+#include <climits> //锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷小值
 #include <vector>
 #include <string>
 
@@ -30,16 +30,16 @@ inline int max(const int& x, const int& y){
 
 int maxSum2D(int A[][4], const int& n, const int& m){
 	int maxinum = INT_MIN;
-	int middlenum(0); //中间值
-	int startnum(0); //起始值
-	int allnum(0); //总值
+	int middlenum(0); //锟叫硷拷值
+	int startnum(0); //锟斤拷始值
+	int allnum(0); //锟斤拷值
 	for(int i=0; i<n; ++i){
 		for(int j=i; j<n; ++j){
 			startnum = segValue(A, i, j, m-1);
 			allnum = segValue(A, i, j, m-1);
 			for(int k=m-2; k>=0; --k){
 				middlenum = segValue(A, i, j, k);
-				startnum = max(segValue(A, i, j, k), startnum+segValue(A, i, j, k));
+				startnum = max(middlenum, startnum+middlenum);
 				allnum = max(startnum, allnum);
 			}
 			maxinum = max(maxinum, allnum);
